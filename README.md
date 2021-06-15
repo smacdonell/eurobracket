@@ -1,0 +1,2 @@
+# scottify
+Social Spotify app
