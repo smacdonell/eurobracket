@@ -1,7 +1,37 @@
 {% extends 'common/template.html' %}
 
+{% load custom_tags %}
+
 {% block body %}
     <div class="wrapper">
-        test
+        <h2>Login</h2>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+
+            {% input_field login_form.username %}
+
+            {% input_field login_form.password 'password' %}
+
+            <input type="submit" name="login" value="Login" />
+        </form>
+
+        <h2>Create Account</h2>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+
+            {% input_field create_account_form.first_name %}
+
+            {% input_field create_account_form.last_name %}
+
+            {% input_field create_account_form.username %}
+
+            {% input_field create_account_form.password 'password' %}
+
+            {% input_field create_account_form.confirm_password 'password' %}
+
+            <input type="submit" name="create_account" value="Create Account" />
+        </form>
+
+        {{ user }}
     </div>
 {% endblock %}

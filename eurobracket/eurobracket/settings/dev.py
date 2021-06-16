@@ -6,7 +6,7 @@ SECRET_KEY = 'e=73n&qf0sw*2n)&h&&9r9jmhw@hz@b-ci-d3+4z3(k-lqer27'
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 DATABASES = {
     'default': {
@@ -25,8 +25,6 @@ CACHES = {
         'LOCATION': '127.0.0.1:11211'
     }
 }
-
-ALLOWED_HOSTS = ['localhost']
 
 LOGGING = {
     'version': 1,
