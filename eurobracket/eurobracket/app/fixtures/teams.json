@@ -1,0 +1,170 @@
+[
+  {
+    "model": "app.team",
+    "pk": 1,
+    "fields": {
+      "name": "Italy"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 2,
+    "fields": {
+      "name": "Wales"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 3,
+    "fields": {
+      "name": "Switzerland"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 4,
+    "fields": {
+      "name": "Turkey"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 5,
+    "fields": {
+      "name": "Belgium"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 6,
+    "fields": {
+      "name": "Russia"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 7,
+    "fields": {
+      "name": "Finland"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 8,
+    "fields": {
+      "name": "Denmark"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 9,
+    "fields": {
+      "name": "Netherlands"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 10,
+    "fields": {
+      "name": "Ukraine"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 11,
+    "fields": {
+      "name": "Austria"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 12,
+    "fields": {
+      "name": "North Macedonia"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 13,
+    "fields": {
+      "name": "Czech Republic"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 14,
+    "fields": {
+      "name": "England"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 15,
+    "fields": {
+      "name": "Croatia"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 16,
+    "fields": {
+      "name": "Scotland"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 17,
+    "fields": {
+      "name": "Slovakia"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 18,
+    "fields": {
+      "name": "Sweden"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 19,
+    "fields": {
+      "name": "Spain"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 20,
+    "fields": {
+      "name": "Poland"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 21,
+    "fields": {
+      "name": "Portugal"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 22,
+    "fields": {
+      "name": "France"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 23,
+    "fields": {
+      "name": "Germany"
+    }
+  },
+  {
+    "model": "app.team",
+    "pk": 24,
+    "fields": {
+      "name": "Hungary"
+    }
+  }
+]

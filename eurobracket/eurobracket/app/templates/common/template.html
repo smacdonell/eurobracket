@@ -10,6 +10,10 @@
 
         <title>Euro 2021 Bracket</title>
 
+        <!-- Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+
         <!-- CSS -->
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
 
@@ -20,7 +24,11 @@
     </head>
 
     <body>
+        {% include "common/header.html" %}
+
         {% block body %}
         {% endblock %}
+
+        {% include "common/footer.html" %}
     </body>
 </html>

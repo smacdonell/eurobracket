@@ -3,35 +3,46 @@
 {% load custom_tags %}
 
 {% block body %}
-    <div class="wrapper">
-        <h2>Login</h2>
-        <form action="{% url 'index' %}" method="post">
-            {% csrf_token %}
+    <div class="wrapper small center">
+        <div class="toggle-container">
+            <div class="toggle-header">
+                <span class="toggle-button {% if not create_account_form.errors %} active{% endif %}" data-target="login">Login</span>
+                <span class="toggle-button {% if create_account_form.errors %} active{% endif %}" data-target="create-account">Create Account</span>
+            </div>
+            <div class="toggle-body">
+                <div class="toggle-target login {% if not create_account_form.errors %} active{% endif %}">
+                    <h3>Login</h3>
+                    <form action="{% url 'index' %}" method="post">
+                        {% csrf_token %}
 
-            {% input_field login_form.username %}
+                        {% input_field login_form.username %}
 
-            {% input_field login_form.password 'password' %}
+                        {% input_field login_form.password 'password' %}
 
-            <input type="submit" name="login" value="Login" />
-        </form>
+                        <input type="submit" name="login" value="Login" />
+                    </form>
+                </div>
+                <div class="toggle-target create-account {% if create_account_form.errors %} active{% endif %}">
+                    <h3>Create Account</h3>
+                    <form action="{% url 'index' %}" method="post">
+                        {% csrf_token %}
 
-        <h2>Create Account</h2>
-        <form action="{% url 'index' %}" method="post">
-            {% csrf_token %}
+                        {% input_field create_account_form.first_name %}
 
-            {% input_field create_account_form.first_name %}
+                        {% input_field create_account_form.last_name %}
 
-            {% input_field create_account_form.last_name %}
+                        {% input_field create_account_form.email %}
 
-            {% input_field create_account_form.username %}
+                        {% input_field create_account_form.username %}
 
-            {% input_field create_account_form.password 'password' %}
+                        {% input_field create_account_form.password 'password' %}
 
-            {% input_field create_account_form.confirm_password 'password' %}
+                        {% input_field create_account_form.confirm_password 'password' %}
 
-            <input type="submit" name="create_account" value="Create Account" />
-        </form>
-
-        {{ user }}
+                        <input type="submit" name="create_account" value="Create Account" />
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
