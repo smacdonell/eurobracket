@@ -1,5 +1,6 @@
 $( document ).ready(function() {
     initToggles();
+    initErrorHandlers();
 });
 
 function initToggles() {
@@ -12,4 +13,26 @@ function initToggles() {
         $(this).addClass('active');
         $('.toggle-container .toggle-target.' + target).addClass('active');
     });
+}
+
+function initErrorHandlers() {
+    $('.form-input input.has-error').on('keyup', function(event) {
+        let value = $(this).val();
+        if(hasStringValue(value)) {
+            $(this).removeClass('has-error');
+            $(this).addClass('had-error');
+        }
+    });
+
+    $('.form-input').on('keyup', 'input.had-error', function(event) {
+        let value = $(this).val();
+        if(!hasStringValue(value)) {
+            $(this).removeClass('had-error');
+            $(this).addClass('has-error');
+        }
+    });
+}
+
+function hasStringValue(val) {
+    return  val !== undefined && val !== null && val !== '';
 }

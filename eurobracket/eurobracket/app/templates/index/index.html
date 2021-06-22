@@ -15,11 +15,15 @@
                     <form action="{% url 'index' %}" method="post">
                         {% csrf_token %}
 
-                        {% input_field login_form.username %}
+                        {% input_field login_form login_form.username %}
 
-                        {% input_field login_form.password 'password' %}
+                        {% input_field login_form login_form.password 'password' %}
 
-                        <input type="submit" name="login" value="Login" />
+                        <input type="submit" class="btn" name="login" value="Login" />
+
+                        {% if login_form.errors %}
+                            <span class="alert alert-danger">* Fields in red are required</span>
+                        {% endif %}
                     </form>
                 </div>
                 <div class="toggle-target create-account {% if create_account_form.errors %} active{% endif %}">
@@ -27,19 +31,35 @@
                     <form action="{% url 'index' %}" method="post">
                         {% csrf_token %}
 
-                        {% input_field create_account_form.first_name %}
+                        {% input_field create_account_form create_account_form.first_name %}
 
-                        {% input_field create_account_form.last_name %}
+                        {% input_field create_account_form create_account_form.last_name %}
 
-                        {% input_field create_account_form.email %}
+                        {% input_field create_account_form create_account_form.email %}
 
-                        {% input_field create_account_form.username %}
+                        {% input_field create_account_form create_account_form.username %}
 
-                        {% input_field create_account_form.password 'password' %}
+                        {% input_field create_account_form create_account_form.password 'password' %}
 
-                        {% input_field create_account_form.confirm_password 'password' %}
+                        {% input_field create_account_form create_account_form.confirm_password 'password' %}
 
-                        <input type="submit" name="create_account" value="Create Account" />
+                        <input type="submit" class="btn" name="create_account" value="Create Account" />
+
+                        {% if create_account_form.errors %}
+                            <span class="alert alert-danger">* Fields in red are required</span>
+
+                            {% for error in create_account_form.password.errors %}
+                                {% if 'required' not in error %}
+                                    <span class="alert alert-danger">Password error: {{ error }}</span>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% for error in create_account_form.confirm_password.errors %}
+                                {% if 'required' not in error %}
+                                    <span class="alert alert-danger">Confirm password error: {{ error }}</span>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
                     </form>
                 </div>
             </div>

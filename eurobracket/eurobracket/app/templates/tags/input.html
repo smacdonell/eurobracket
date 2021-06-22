@@ -1,12 +1,12 @@
 {% comment %} tags/input.html {% endcomment %}
 
 <div class="form-input">
-    <p>
-        <label for="id_{{ field.html_name }}">{{ field.label }}</label>
-        <input type="{{ field_type }}" id="id_new_{{ field.html_name }}" name="{{ field.html_name }}" value="{{ field.value|default_if_none:'' }}" />
-    </p>
+    {% if field.show_label %}
+       <label for="id_{{ field.html_name }}">{{ field.label }}</label>
+    {% endif %}
+    <input type="{{ field_type }}" id="id_new_{{ field.html_name }}" {% if field.errors %}class="has-error" {% endif %}name="{{ field.html_name }}" value="{{ field.value|default_if_none:'' }}" placeholder="{{ field.label }}" />
 
-    {% if field.errors %}
+    {% if field.errors and False %}
         <span class="alert alert-danger">{{ field.errors|first|escape }}</span>
     {% endif %}
 </div>

@@ -2,10 +2,12 @@ from django.views.generic import TemplateView
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.http import HttpResponseRedirect
 from eurobracket.app.forms.account_forms import LoginForm
 from eurobracket.app.forms.account_forms import CreateAccountForm
 import logging
-from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+
+from eurobracket.app.models import UserStateRel, UserState
 from eurobracket.app.src.mixins.anonymous import AnonymousRequiredMixin
 
 
@@ -59,8 +61,16 @@ class IndexView(AnonymousRequiredMixin, TemplateView):
             if create_account_form.is_valid():
                 user = User.objects.create_user(request.POST['username'], request.POST['email'], request.POST['password'],
                     first_name=request.POST['first_name'], last_name=request.POST['last_name'])
+                UserStateRel.objects.create(user=user, state=UserState.objects.get(state='PICKS_NEEDED'))
+
                 if user is not None:
                     login(request, user)
                     context['user'] = user
+
+        try :
+            if user.is_authenticated:
+                return HttpResponseRedirect(self.redirect_url)
+        except NameError as e:
+            self.logger.warning(e)
 
         return render(request, self.template_name, context)

@@ -4,4 +4,16 @@
     <div class="logo">
         <img src="{%  static 'images/euro_logo.svg' %}" alt="Euro 2020 Bracket" />
     </div>
+
+    {% if user.is_authenticated %}
+        <div class="account-header-left">
+            <span>Hello, {{ user.first_name }}</span>
+        </div>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <div class="account-header-right">
+            <a href="/account/logout/">Logout</a>
+        </div>
+    {% endif %}
 </header>

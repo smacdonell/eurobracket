@@ -1,0 +1,16 @@
+[
+  {
+    "model": "app.userstate",
+    "pk": 1,
+    "fields": {
+      "state": "PICKS_NEEDED"
+    }
+  },
+  {
+    "model": "app.userstate",
+    "pk": 2,
+    "fields": {
+      "state": "PICKS_MADE"
+    }
+  }
+]

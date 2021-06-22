@@ -3,5 +3,13 @@
 {% load custom_tags %}
 
 {% block body %}
-    <h1>Time to make picks</h1>
+    <div class="wrapper medium center">
+        <h3>Make your picks below:</h3>
+
+        <div class="teams">
+            {% for team in active_teams %}
+                {{ team.name }}
+            {% endfor %}
+        </div>
+    </div>
 {% endblock %}

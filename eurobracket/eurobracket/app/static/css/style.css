@@ -1,21 +1,54 @@
 html, body { margin: 0; padding: 0; font-family: 'Fira Sans', sans-serif; }
 
 .center { text-align: center; }
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+h3 { margin: 0 5px; }
 
 header { width: 100%; height: 100px; background: #0b1745; color: #fff; }
 header .logo { margin: 0 auto; width: 100px; padding-top: 15px; }
 header .logo img { }
+header .account-header-left,
+header .account-header-right { position: absolute; top: 40px; }
+header .account-header-left { left: 50px; }
+header .account-header-right { right: 50px; }
+header a { color: #fff; }
 footer { width: 100%; height: 50px; background: #0b1745; color: #fff; }
 footer .signature { text-align: center; line-height: 50px; }
 
-.wrapper { min-height: calc(100vh - 150px); }
+.wrapper { min-height: calc(100vh - 230px); padding: 40px 0; }
 .wrapper.small { width: 600px; margin: 0 auto; }
-.wrapper.small .form-input { width: 250px; }
-.form-input { margin: 0 auto; }
+.wrapper.small { width: 900px; margin: 0 auto; }
+.wrapper.small .form-input { width: 200px; }
+.form-input { margin: 0 auto; margin-bottom: 15px; }
 .form-input label { display: block; }
+.form-input input {
+    height: 30px;
+    padding: 0 5px;
+    font-size: 14px;
+    font-family: 'Fira Sans', sans-serif;
+    border-style: solid;
+    border-color: #ccc;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+.form-input input.has-error { border-color: #ff0000; }
+.alert { display: block; padding-top: 10px; }
+.alert-danger { color: #ff0000; }
+.btn { font-size: 14px;
+    padding: 7px 15px;
+    background: #0b1745;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    width: 125px;
+    cursor: pointer;
+}
+.btn:hover { background-color: #5c71ba; }
 
 .toggle-container .toggle-header { font-size: 25px; }
-.toggle-container .toggle-button { cursor: pointer; }
+.toggle-container .toggle-button { cursor: pointer; padding: 0 20px; }
 .toggle-container .toggle-button:hover { text-decoration: underline; }
 .toggle-container .toggle-button.active { text-decoration: underline; }
 .toggle-container .toggle-target { display: none; }

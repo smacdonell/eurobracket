@@ -1,0 +1,47 @@
+[
+  {
+    "model": "app.round",
+    "pk": 1,
+    "fields": {
+      "name": "Round of 16",
+      "ref_code": "ROUND_OF_SIXTEEN",
+      "points": 2
+    }
+  },
+  {
+    "model": "app.round",
+    "pk": 2,
+    "fields": {
+      "name": "Quarter-finals ",
+      "ref_code": "QUARTER_FINALS",
+      "points": 4
+    }
+  },
+  {
+    "model": "app.round",
+    "pk": 3,
+    "fields": {
+      "name": "Semi-finals",
+      "ref_code": "SEMI_FINALS",
+      "points": 8
+    }
+  },
+  {
+    "model": "app.round",
+    "pk": 4,
+    "fields": {
+      "name": "Third Place",
+      "ref_code": "THIRD_PLACE",
+      "points": 12
+    }
+  },
+  {
+    "model": "app.round",
+    "pk": 5,
+    "fields": {
+      "name": "Finals",
+      "ref_code": "FINALS",
+      "points": 16
+    }
+  }
+]
