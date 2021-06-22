@@ -1,6 +1,6 @@
 from django.db import models
 
-from eurobracket.app.models import Team
+from eurobracket.app.models import Team, User
 
 
 class Round(models.Model):
@@ -22,3 +22,12 @@ class Game(models.Model):
 
     class Meta:
         db_table = 'game'
+
+
+class Prediction(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    game = models.ForeignKey(Game, on_delete=models.CASCADE)
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+
+    class Meta:
+        db_table = 'prediction'
