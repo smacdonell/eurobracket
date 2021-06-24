@@ -30,15 +30,6 @@
     "model": "app.round",
     "pk": 4,
     "fields": {
-      "name": "Third Place",
-      "ref_code": "THIRD_PLACE",
-      "points": 12
-    }
-  },
-  {
-    "model": "app.round",
-    "pk": 5,
-    "fields": {
       "name": "Finals",
       "ref_code": "FINALS",
       "points": 16

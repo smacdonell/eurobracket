@@ -67,7 +67,7 @@ class IndexView(AnonymousRequiredMixin, TemplateView):
                     login(request, user)
                     context['user'] = user
 
-        try :
+        try:
             if user.is_authenticated:
                 return HttpResponseRedirect(self.redirect_url)
         except NameError as e:

@@ -4,12 +4,27 @@
 
 {% block body %}
     <div class="wrapper medium center">
-        <h3>Make your picks below:</h3>
+        <h3>Make your picks for the {{ current_round.name }} below:</h3>
 
-        <div class="teams">
-            {% for team in active_teams %}
-                {{ team.name }}
+        <div class="predictor">
+            {% for game in pred_games %}
+                <div class="game-prediction game-prediction-{{ game.game.id }}" data-game-id="{{ game.game.id }}">
+                    <span class="team-prediction team-prediction-{{ game.team_one.id }}" data-team-id="{{ game.team_one.id }}">{{ game.team_one.name }}</span>
+                    <span class="team-prediction team-prediction-{{ game.team_two.id }}" data-team-id="{{ game.team_two.id }}">{{ game.team_two.name }}</span>
+                </div>
+                <br />
+                <br />
             {% endfor %}
+
+            <form action="{% url 'make_picks' %}" method="post">
+                {% csrf_token %}
+
+                <input type="hidden" id="predictor-input" name="{{ form.pred_data.html_name }}" data-round="{{ current_round.ref_code }}" value="{{ form.pred_data.value|default_if_none:'' }}" />
+
+                <input type="submit" class="btn" name="make_picks" value="Submit Predictions" />
+
+                {{ form.errors }}
+            </form>
         </div>
     </div>
 {% endblock %}

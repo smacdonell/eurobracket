@@ -53,3 +53,6 @@ footer .signature { text-align: center; line-height: 50px; }
 .toggle-container .toggle-button.active { text-decoration: underline; }
 .toggle-container .toggle-target { display: none; }
 .toggle-container .toggle-target.active { display: block; }
+
+.team-prediction { cursor: pointer; }
+.team-prediction.active { text-decoration: underline; }
