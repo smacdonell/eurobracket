@@ -46,6 +46,7 @@ footer .signature { text-align: center; line-height: 50px; }
     cursor: pointer;
 }
 .btn:hover { background-color: #5c71ba; }
+.btn-big { width: 175px; }
 
 .toggle-container .toggle-header { font-size: 25px; }
 .toggle-container .toggle-button { cursor: pointer; padding: 0 20px; }
@@ -54,5 +55,15 @@ footer .signature { text-align: center; line-height: 50px; }
 .toggle-container .toggle-target { display: none; }
 .toggle-container .toggle-target.active { display: block; }
 
-.team-prediction { cursor: pointer; }
-.team-prediction.active { text-decoration: underline; }
+.predictor { margin-top: 25px; }
+.predictor .game-prediction { margin: 10px 0; }
+.team-prediction {
+    cursor: pointer;
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+}
+.team-prediction.active { background-color: #ccc; }
