@@ -42,7 +42,7 @@ class MakePicksView(LoginRequiredMixin, UserHasStateMixin, TemplateView):
         pred_games = []
         for game in games:
             game_rel = GameRel.objects.filter(game=game)
-            if len(game_rel) == 0:
+            if current_round.ref_code == 'ROUND_OF_SIXTEEN':
                 pred_games.append({
                     'game': game,
                     'team_one': game.team_one,
