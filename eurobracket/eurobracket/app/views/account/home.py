@@ -7,22 +7,30 @@ from django.shortcuts import render, redirect
 import logging
 import random
 
+from eurobracket.app.models import Prediction, Round
+
 
 class HomeView(LoginRequiredMixin, TemplateView):
     login_url = '/'
     redirect_field_name = '/'
     template_name = 'account/home.html'
-    messages = [
-        'Wow, those are some bad picks',
-        'Those might be the worst picks I\'ve ever seen',
-        'Well, you\'re definitely losing now',
-        'Those predictions are incredibly stupid',
-        'Yikes, good luck with those terrible picks'
-    ]
     logger = logging.getLogger('logger')
 
     def get(self, request, *args, **kwargs):
+        predictions = {
+            'ROUND_OF_SIXTEEN': Prediction.objects.filter(user=request.user, round=Round.objects.get(ref_code='ROUND_OF_SIXTEEN')),
+            'QUARTER_FINALS': Prediction.objects.filter(user=request.user, round=Round.objects.get(ref_code='QUARTER_FINALS')),
+            'SEMI_FINALS': Prediction.objects.filter(user=request.user, round=Round.objects.get(ref_code='SEMI_FINALS')),
+            'FINALS': Prediction.objects.filter(user=request.user, round=Round.objects.get(ref_code='FINALS'))
+        }
+
+        score = 0
+        for pred in Prediction.objects.filter(user=request.user):
+            if pred.game.game_happened and pred.winning_team_id == pred.game.winning_team_id:
+                score += pred.game.round.points
+
         context = {
-            'message': self.messages[random.randint(0, 4)]
+            'predictions': predictions,
+            'score': score
         }
         return render(request, self.template_name, context)

@@ -1,0 +1,22 @@
+{% extends 'common/template.html' %}
+
+{% load custom_tags %}
+
+{% block body %}
+    <div class="wrapper medium center">
+        <h3>Leaderboard</h3>
+
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Score</th>
+            </tr>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.user.username }} ({{ user.user.first_name }} {{ user.user.last_name }})</td>
+                    <td>{{ user.score }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+{% endblock %}

@@ -19,6 +19,7 @@ class Game(models.Model):
     team_one_score = models.IntegerField()
     team_two_score = models.IntegerField()
     game_happened = models.BooleanField(default=False)
+    winning_team = models.ForeignKey(Team, on_delete=models.CASCADE, related_name='game_winning_team', blank=True, null=True)
 
     class Meta:
         db_table = 'game'

@@ -67,3 +67,29 @@ footer .signature { text-align: center; line-height: 50px; }
     display: inline-block;
 }
 .team-prediction.active { background-color: #ccc; }
+
+.my-score { margin-bottom: 25px; }
+.my-score span { font-size: 26px; }
+
+.round { margin-top: 15px; }
+.round h3 { padding-bottom: 15px; }
+.round .game { margin: 10px 0; }
+.round .game.happened {  }
+.round .game.correct {  }
+.round .game .team {
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+}
+.round .game .team.winning-pred { text-decoration: underline; background: #ccc; }
+.round .game .team.losing-pred { }
+
+table { margin: 0 auto; margin-top: 20px; border-collapse: collapse; width: 600px; }
+table, th, td {
+    border: 1px solid black;
+}
+table th { background: #ccc; }
+table td { width: 50%; height: 40px;}
