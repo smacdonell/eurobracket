@@ -20,7 +20,7 @@ class MakePicksView(LoginRequiredMixin, UserHasStateMixin, TemplateView):
     anon_redirect_url = '/'
     required_state = 'PICKS_NEEDED'
     template_name = 'account/makepicks.html'
-    logger = logging.getLogger('logger')
+    logger = logging.getLogger('eurobracket')
 
     def construct_context(self, request):
         user = request.user

@@ -2,6 +2,8 @@ from .base import *
 
 PROPS_DIR = BASE_DIR + "/app/properties/live/"
 
+SECRET_KEY = 'e=73n&qf0sw*2n)&h&&9r9jmhw@hz@b-ci-d3+4z3(k-lqer27'
+
 ALLOWED_HOSTS = [
     'localhost',
     'scottify.app',

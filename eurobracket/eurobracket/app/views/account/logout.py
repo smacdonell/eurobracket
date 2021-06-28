@@ -5,7 +5,7 @@ import logging
 
 
 class LogoutView(RedirectView):
-    logger = logging.getLogger('logger')
+    logger = logging.getLogger('eurobracket')
 
     def get(self, request, *args, **kwargs):
         logout(request)

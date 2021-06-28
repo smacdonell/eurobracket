@@ -14,7 +14,7 @@ from eurobracket.app.src.mixins.anonymous import AnonymousRequiredMixin
 class IndexView(AnonymousRequiredMixin, TemplateView):
     redirect_url = 'account/makepicks/'
     template_name = 'index/index.html'
-    logger = logging.getLogger('logger')
+    logger = logging.getLogger('eurobracket')
 
     """
      Constructs the forms and objects needed for the splash page 

@@ -14,7 +14,7 @@ class HomeView(LoginRequiredMixin, TemplateView):
     login_url = '/'
     redirect_field_name = '/'
     template_name = 'account/home.html'
-    logger = logging.getLogger('logger')
+    logger = logging.getLogger('eurobracket')
 
     def get(self, request, *args, **kwargs):
         predictions = {

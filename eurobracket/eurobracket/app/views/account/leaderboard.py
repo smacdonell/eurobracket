@@ -11,7 +11,7 @@ class LeaderboardView(LoginRequiredMixin, TemplateView):
     login_url = '/'
     redirect_field_name = '/'
     template_name = 'account/leaderboard.html'
-    logger = logging.getLogger('logger')
+    logger = logging.getLogger('eurobracket')
 
     def get(self, request, *args, **kwargs):
         made_rel = UserStateRel.objects.filter(state=UserState.objects.get(state='PICKS_MADE'))
