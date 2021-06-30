@@ -95,5 +95,7 @@ table th { background: #ccc; }
 table td { width: 50%; height: 40px;}
 
 .wrapper .links { margin-bottom: 30px; }
-.wrapper .links a { color: #000; text-decoration: none; }
+.wrapper .links a,
+table a { color: #000; text-decoration: none; }
 .wrapper .links a:hover { text-decoration: underline; }
+.wrapper .links a + a { padding-left: 10px; }

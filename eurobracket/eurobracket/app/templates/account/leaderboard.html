@@ -9,6 +9,7 @@
         </div>
 
         <h3>Leaderboard</h3>
+        <p>Click a user to view their predictions</p>
 
         <table>
             <tr>
@@ -17,7 +18,9 @@
             </tr>
             {% for user in users %}
                 <tr>
-                    <td>{{ user.user.username }} ({{ user.user.first_name }} {{ user.user.last_name }})</td>
+                    <td>
+                        <a href="/predictions/{{ user.user.id }}/">{{ user.user.username }} ({{ user.user.first_name }} {{ user.user.last_name }})</a>
+                    </td>
                     <td>{{ user.score }}</td>
                 </tr>
             {% endfor %}

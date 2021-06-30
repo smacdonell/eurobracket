@@ -1,0 +1,123 @@
+{% extends 'common/template.html' %}
+
+{% load custom_tags %}
+
+{% block body %}
+    <div class="wrapper medium center">
+        <div class="links">
+            <a href="/account/home/">My Predictions</a>
+            <a href="/account/leaderboard/">View Leaderboard</a>
+        </div>
+
+        <div class="my-score">
+            <span>{{ user.username }}'s Overall Score: {{ score }}</span>
+        </div>
+
+        <div class="toggle-container">
+            <div class="toggle-header">
+                <span class="toggle-button active" data-target="r1">Round of 16</span>
+                <span class="toggle-button" data-target="r2">Quarter-Finals</span>
+                <span class="toggle-button" data-target="r3">Semi-Finals</span>
+                <span class="toggle-button" data-target="r4">Finals</span>
+            </div>
+
+            <div class="toggle-body">
+                <div class="round toggle-target r1 active">
+                    <h3>Round of 16</h3>
+
+                    {% for pred in predictions.ROUND_OF_SIXTEEN %}
+                        <div class="game{% if pred.game.game_happened %} happened{% endif %}{% if pred.winning_team == pred.game.winning_team %} correct{% endif %}">
+                            <span class="team winning-pred">{{ pred.winning_team.name }}</span>
+                            --
+                            <span class="team losing-pred">{{ pred.losing_team.name }}</span>
+                        </div>
+                        <div class="result">
+                            {% if pred.game.game_happened %}
+                                Winning Team: {{ pred.game.winning_team.name }} -- Points:
+                                {% if pred.winning_team == pred.game.winning_team %}
+                                    {{ pred.game.round.points }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                            {% else %}
+                                Game has not yet been played
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="round toggle-target r2">
+                    <h3>Quarter-Finals</h3>
+
+                    {% for pred in predictions.QUARTER_FINALS %}
+                        <div class="game{% if pred.game.game_happened %} happened{% endif %}{% if pred.winning_team == pred.game.winning_team %} correct{% endif %}">
+                            <span class="team winning-pred">{{ pred.winning_team.name }}</span>
+                            --
+                            <span class="team losing-pred">{{ pred.losing_team.name }}</span>
+                        </div>
+                        <div class="result">
+                            {% if pred.game.game_happened %}
+                                Winning Team: {{ pred.game.winning_team.name }} -- Points:
+                                {% if pred.winning_team == pred.game.winning_team %}
+                                    {{ pred.game.round.points }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                            {% else %}
+                                Game has not yet been played
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="round toggle-target r3">
+                    <h3>Semi-Finals</h3>
+
+                    {% for pred in predictions.SEMI_FINALS %}
+                        <div class="game{% if pred.game.game_happened %} happened{% endif %}{% if pred.winning_team == pred.game.winning_team %} correct{% endif %}">
+                            <span class="team winning-pred">{{ pred.winning_team.name }}</span>
+                            --
+                            <span class="team losing-pred">{{ pred.losing_team.name }}</span>
+                        </div>
+                        <div class="result">
+                            {% if pred.game.game_happened %}
+                                Winning Team: {{ pred.game.winning_team.name }} -- Points:
+                                {% if pred.winning_team == pred.game.winning_team %}
+                                    {{ pred.game.round.points }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                            {% else %}
+                                Game has not yet been played
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="round toggle-target r4">
+                    <h3>Finals</h3>
+
+                    {% for pred in predictions.FINALS %}
+                        <div class="game{% if pred.game.game_happened %} happened{% endif %}{% if pred.winning_team == pred.game.winning_team %} correct{% endif %}">
+                            <span class="team winning-pred">{{ pred.winning_team.name }}</span>
+                            --
+                            <span class="team losing-pred">{{ pred.losing_team.name }}</span>
+                        </div>
+                        <div class="result">
+                            {% if pred.game.game_happened %}
+                                Winning Team: {{ pred.game.winning_team.name }} -- Points:
+                                {% if pred.winning_team == pred.game.winning_team %}
+                                    {{ pred.game.round.points }}
+                                {% else %}
+                                    0
+                                {% endif %}
+                            {% else %}
+                                Game has not yet been played
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
